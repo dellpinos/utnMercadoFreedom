@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>del Pino</title>
-    <link rel="stylesheet" href="/public/assets/css/app.css">
+    <title>MF</title>
+    <link rel="icon" href="img/gift.png" type="image/x-icon">
+    <link rel="stylesheet" href="/assets/css/app.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
@@ -15,7 +16,7 @@
 
     <header class="home__header">
     <div class="home__contenedor-header">
-            <a href="/public" class="home__logo">
+            <a href="/" class="home__logo">
 
                 <svg class="home__logo-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M21 11.25v8.25a1.5 1.5 0 0 1-1.5 1.5H5.25a1.5 1.5 0 0 1-1.5-1.5v-8.25M12 4.875A2.625 2.625 0 1 0 9.375 7.5H12m0-2.625V7.5m0-2.625A2.625 2.625 0 1 1 14.625 7.5H12m0 0V21m-8.625-9.75h18c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125h-18c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125Z" />
@@ -23,7 +24,7 @@
 
                 <h1>Mercado Freedom</h1>
             </a>
-            <a href="https://github.com/dellpinos" class="home__right">Contacto</a>
+            <a href="https://github.com/dellpinos" class="home__right">MdP</a>
         </div>
     </header>
 
@@ -33,7 +34,7 @@
         <div class="producto__contenedor">
             <h3 class="producto__precio">$ <?php echo floor($producto['precio']); ?></h3>
             <div class="producto__full-img">
-                <img src="/public/img/<?php echo $producto['imagen'] ?>.jpg" alt="Imagen Producto">
+                <img src="/img/<?php echo $producto['imagen'] ?>.jpg" alt="Imagen Producto">
 
             </div>
             <p class="producto__descripcion"><?php echo $producto['descripcion'] . " #Cod: " . $producto['id'] ?></p>

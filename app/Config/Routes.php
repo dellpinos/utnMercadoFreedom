@@ -8,8 +8,6 @@ use CodeIgniter\Router\RouteCollection;
 
 $routes->get('/', 'HomeController::index');
 
-// $routes->get('/producto', 'ProductoController::index');
-
 $routes->get('/producto/(:num)', 'ProductoController::find/$1');
 
 $routes->post('/producto/update', 'ProductoController::update');
