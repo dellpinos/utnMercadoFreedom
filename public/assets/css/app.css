@@ -87,6 +87,17 @@ a {
     cursor: pointer;
 }
 
+.home__right {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    color: var(--negro);
+
+}
+.home__right:hover {
+    color: var(--azul);
+}
+
 
 /* Contenido */
 

@@ -24,7 +24,7 @@
 
                 <h1>Mercado Freedom</h1>
             </a>
-            <a href="https://github.com/dellpinos" class="home__right">MdP</a>
+            <a href="https://github.com/dellpinos" class="home__right" target="_blank">MdP</a>
         </div>
     </header>
 
