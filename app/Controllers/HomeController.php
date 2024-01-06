@@ -15,16 +15,23 @@ class HomeController extends BaseController
         $resultado = $productos->findAll();
 
         if($session->has('mensaje')) {
-
             $mensaje = $session->get('mensaje');
 
             return view('home/index', [
                 'productos' => $resultado,
                 'mensaje' => $mensaje
-
             ]);
             
-        } else {
+        }elseif ($session->has('mensaje_stock')) {
+            $mensaje = $session->get('mensaje_stock');
+
+            return view('home/index', [
+                'productos' => $resultado,
+                'mensaje' => $mensaje
+            ]);
+        } 
+
+         else {
 
             return view('home/index', [
                 'productos' => $resultado

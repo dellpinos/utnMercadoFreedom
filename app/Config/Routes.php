@@ -12,3 +12,5 @@ $routes->get('/producto/(:num)', 'ProductoController::find/$1');
 
 $routes->post('/producto/update', 'ProductoController::update');
 
+$routes->post('/producto/sumar_stock', 'ProductoController::sumar_stock');
+

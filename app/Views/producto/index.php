@@ -15,7 +15,7 @@
 <body>
 
     <header class="home__header">
-    <div class="home__contenedor-header">
+        <div class="home__contenedor-header">
             <a href="/" class="home__logo">
 
                 <svg class="home__logo-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -29,6 +29,7 @@
     </header>
 
     <div class="home__principal">
+
         <h2><?php echo $producto['nombre']; ?></h2>
 
         <div class="producto__contenedor">
@@ -38,14 +39,22 @@
 
             </div>
             <p class="producto__descripcion"><?php echo $producto['descripcion'] . " #Cod: " . $producto['id'] ?></p>
-            <div class="producto__contenedor-enlace">
 
-            <form action="<?php echo site_url('/producto/update') ?>" method="POST">
-            
-                <input type="hidden" name="id" value="<?php echo $producto['id']; ?>">
-                <button class="producto__btn text-xl" type="submit" >Comprar</button>
-            </form>
-                <p>Stock: <span><?php echo $producto['stock']; ?></span></p>
+            <div class="producto__contenedor-enlace">
+                <?php $producto['stock'] <= 0 ? $agotado = true : $agotado = false; ?>
+                <?php if (!$agotado) : ?>
+                    <form action="<?php echo site_url('/producto/update') ?>" method="POST">
+
+                        <input type="hidden" name="id" value="<?php echo $producto['id']; ?>">
+                        <button class="producto__btn text-xl" type="submit">Comprar</button>
+                    </form>
+                    <p>Stock: <span><?php echo $producto['stock']; ?></span></p>
+
+                <?php else : ?>
+                    <p class="producto__agotado">Agotado</p>
+                <?php endif ?>
+
+
             </div>
         </div>
 

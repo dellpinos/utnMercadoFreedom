@@ -24,13 +24,19 @@
 
                 <h1>Mercado Freedom</h1>
             </a>
-            <a href="https://github.com/dellpinos" class="home__right">MdP</a>
+
+            <form class="home__contenedor-stock-btn" action="<?php echo site_url('/producto/sumar_stock') ?>" method="POST">
+
+                <button class="home__stock-btn" type="submit">Reponer Stock</button>
+            </form>
+
+
         </div>
     </header>
     <?php if (isset($mensaje)) : ?>
-        <p class="home__mensaje">Que buena compra!</p>
-
+        <p class="home__mensaje"><?php echo $mensaje ?></p>
     <?php endif ?>
+
 
     <div class="home__principal">
 
@@ -38,6 +44,8 @@
 
         <div class="home__grid">
             <?php foreach ($productos as $producto) : ?>
+
+                <?php $producto['stock'] <= 0 ? $agotado = true : $agotado = false; ?>
 
                 <div class="producto__contenedor">
                     <h3 class="producto__contenedor-heading"><?php echo $producto['nombre'] ?></h3>
@@ -47,8 +55,13 @@
                     </div>
                     <p class="producto__descripcion"><?php echo $producto['descripcion'] . " #Cod: " . $producto['id'] ?></p>
                     <div class="producto__contenedor-enlace">
-                        <a class="producto__btn" href="<?php echo site_url('producto/' . $producto['id']) ?>">Comprar</a>
-                        <p>Stock: <span><?php echo $producto['stock'] ?></span></p>
+                        <?php if (!$agotado) : ?>
+                            <a class="producto__btn" href="<?php echo site_url('producto/' . $producto['id']) ?>">Comprar</a>
+                            <p>Stock: <span><?php echo $producto['stock'] ?></span></p>
+
+                        <?php else : ?>
+                            <p class="producto__agotado">Agotado</p>
+                        <?php endif ?>
                     </div>
                 </div>
             <?php endforeach; ?>

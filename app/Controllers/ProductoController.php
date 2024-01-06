@@ -21,12 +21,20 @@ class ProductoController extends BaseController
     {
 
         $session = Services::session();
-        $productos = new ProductoModel();
+        $producto = new ProductoModel();
+
+        // Busco el producto
+        $resultado = $producto->find($this->request->getPost('id'));
+
+        // Verifico si hay stock disponible
+        if($resultado['stock'] <= 0 ) {
+            $session->setFlashdata('mensaje', 'Stock insuficiente');
+            return redirect()->to('/');
+        }
 
         // Resto 1 al stock
-        $resultado = $productos->find($_POST['id']);
-        $resultado['stock'] = $resultado['stock'] -1;
-        $respuesta = $productos->update($resultado['id'], $resultado);
+        $resultado['stock'] = $resultado['stock'] - 1;
+        $respuesta = $producto->update($resultado['id'], $resultado);
 
         // Mensaje condicional
         if($respuesta) {
@@ -39,4 +47,25 @@ class ProductoController extends BaseController
         return redirect()->to('/');
 
     }
+
+    public function sumar_stock()
+    {
+        
+        $session = Services::session();
+        $producto = new ProductoModel();
+        $resultado = $producto->findAll();
+
+        foreach($resultado as $articulo) {
+
+            // Sumo 1 stock a cada producto
+            $articulo['stock'] = $articulo['stock'] + 1;
+            $producto->update($articulo['id'], $articulo);
+        }
+
+        $session->setFlashdata('mensaje_stock', '+ 1 a todo el Stock!');
+
+        return redirect()->to('/');
+
+    }
+
 }
