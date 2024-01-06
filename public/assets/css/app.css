@@ -8,7 +8,8 @@
     --azulOscuro: #185ABE;
     --silver: #C0C0C0;
     --verde: #008000;
-    --rojo: #FF0000;
+    --rojo: #e30000;
+    --rojoOscuro: #bb0903;
 
     --fuente: 'Lato', sans-serif;
 }
@@ -69,6 +70,8 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
 
 .home__stock-btn {
@@ -244,4 +247,10 @@ a {
 
 .text-xl {
     font-size: 25px;
+}
+.bg-red {
+    background-color: var(--rojo);
+}
+.bg-red:hover {
+    background-color: var(--rojoOscuro);
 }

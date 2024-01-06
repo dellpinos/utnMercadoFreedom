@@ -24,11 +24,15 @@
 
                 <h1>Mercado Freedom</h1>
             </a>
+            <div class="home__contenedor-stock-btn">
+                <form action="<?php echo site_url('/producto/sumar_stock') ?>" method="POST">
+                    <button class="home__stock-btn" type="submit">Reponer Stock</button>
+                </form>
+                <form action="<?php echo site_url('/producto/vender_todo') ?>" method="POST">
+                    <button class="home__stock-btn bg-red" type="submit">Vender Todo</button>
+                </form>
+            </div>
 
-            <form class="home__contenedor-stock-btn" action="<?php echo site_url('/producto/sumar_stock') ?>" method="POST">
-
-                <button class="home__stock-btn" type="submit">Reponer Stock</button>
-            </form>
 
 
         </div>

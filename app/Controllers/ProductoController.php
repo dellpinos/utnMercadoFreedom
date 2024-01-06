@@ -2,8 +2,8 @@
 
 namespace App\Controllers;
 
- use App\Models\ProductoModel;
- use \Config\Services;
+use App\Models\ProductoModel;
+use \Config\Services;
 
 class ProductoController extends BaseController
 {
@@ -27,7 +27,7 @@ class ProductoController extends BaseController
         $resultado = $producto->find($this->request->getPost('id'));
 
         // Verifico si hay stock disponible
-        if($resultado['stock'] <= 0 ) {
+        if ($resultado['stock'] <= 0) {
             $session->setFlashdata('mensaje', 'Stock insuficiente');
             return redirect()->to('/');
         }
@@ -37,35 +37,57 @@ class ProductoController extends BaseController
         $respuesta = $producto->update($resultado['id'], $resultado);
 
         // Mensaje condicional
-        if($respuesta) {
+        if ($respuesta) {
             $session->setFlashdata('mensaje', 'Que buena compra!');
-
         } else {
             $session->setFlashdata('mensaje', 'Ups! Algo salió mal');
         }
 
         return redirect()->to('/');
-
     }
 
     public function sumar_stock()
     {
-        
+
         $session = Services::session();
         $producto = new ProductoModel();
         $resultado = $producto->findAll();
 
-        foreach($resultado as $articulo) {
+        foreach ($resultado as $articulo) {
 
-            // Sumo 1 stock a cada producto
-            $articulo['stock'] = $articulo['stock'] + 1;
-            $producto->update($articulo['id'], $articulo);
+
+            if (intval($articulo['stock']) < 99) {
+ 
+                // Sumo 1 stock a cada producto
+                $articulo['stock'] = $articulo['stock'] + 1;
+                $producto->update($articulo['id'], $articulo);
+            }
         }
 
         $session->setFlashdata('mensaje_stock', '+ 1 a todo el Stock!');
 
         return redirect()->to('/');
-
     }
 
+    public function vender_todo()
+    {
+
+        $session = Services::session();
+        $producto = new ProductoModel();
+        $resultado = $producto->findAll();
+
+        foreach ($resultado as $articulo) {
+
+
+ 
+                // Sumo 1 stock a cada producto
+                $articulo['stock'] = 0;
+                $producto->update($articulo['id'], $articulo);
+
+        }
+
+        $session->setFlashdata('mensaje_stock', 'No quedo nada!');
+
+        return redirect()->to('/');
+    }
 }
