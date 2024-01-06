@@ -42,9 +42,10 @@ $RECYCLE.BIN/
 # These should never be under version control,
 # as it poses a security risk.
 .env
-.env.prod
 .vagrant
 Vagrantfile
+# env producción
+.env.prod
 
 #-------------------------
 # Temporary Files
