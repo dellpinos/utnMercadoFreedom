@@ -38,7 +38,7 @@
                 <img src="/img/<?php echo $producto['imagen'] ?>.jpg" alt="Imagen Producto">
 
             </div>
-            <p class="producto__descripcion"><?php echo $producto['descripcion'] . " #Cod: " . $producto['id'] ?></p>
+            <p class="producto__descripcion"><?php echo $producto['descripcion']?><span class="text-bold"><?php echo " #Cod: " . $producto['id'] ?></span></p>
 
             <div class="producto__contenedor-enlace">
                 <?php $producto['stock'] <= 0 ? $agotado = true : $agotado = false; ?>

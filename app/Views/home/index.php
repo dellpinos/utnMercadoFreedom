@@ -57,10 +57,10 @@
                         <img src="img/<?php echo $producto['imagen'] ?>.jpg" alt="Imagen Producto">
 
                     </div>
-                    <p class="producto__descripcion"><?php echo $producto['descripcion'] . " #Cod: " . $producto['id'] ?></p>
+                    <p class="producto__descripcion"><?php echo $producto['descripcion']?><span class="text-bold"><?php echo " #Cod: " . $producto['id'] ?></span></p>
                     <div class="producto__contenedor-enlace">
                         <?php if (!$agotado) : ?>
-                            <a class="producto__btn" href="<?php echo site_url('producto/' . $producto['id']) ?>">Comprar</a>
+                            <a class="producto__btn" href="<?php echo site_url('producto/' . $producto['id']) ?>">Ver Detalles</a>
                             <p>Stock: <span><?php echo $producto['stock'] ?></span></p>
 
                         <?php else : ?>

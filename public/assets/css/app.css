@@ -108,9 +108,9 @@ a {
     background-color: var(--verde);
     text-align: center;
     color: var(--blanco);
-    font-size: 18px;
+    font-size: 25px;
     font-weight: 700;
-    padding: 5px;
+    padding: 12px;
 }
 
 .home__grid {
@@ -247,6 +247,9 @@ a {
 
 .text-xl {
     font-size: 25px;
+}
+.text-bold {
+    font-weight: 700;
 }
 .bg-red {
     background-color: var(--rojo);
