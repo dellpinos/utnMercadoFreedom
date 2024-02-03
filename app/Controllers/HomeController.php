@@ -39,4 +39,9 @@ class HomeController extends BaseController
         }
 
     }
+
+    public function contact() {
+
+        return view('home/contact');
+    }
 }

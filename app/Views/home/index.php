@@ -42,7 +42,7 @@
     <?php endif ?>
 
 
-    <div class="home__principal">
+    <main class="home__principal">
 
         <h2>Tenemos todos los talles!</h2>
 
@@ -72,11 +72,14 @@
 
 
         </div>
-    </div>
+    </main>
 
     <footer class="home__footer">
         <p>&copy; Martin del Pino - <span><?php echo Date('Y'); ?></span></p>
+
+
     </footer>
+
 
 </body>
 

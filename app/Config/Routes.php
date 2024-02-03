@@ -16,3 +16,7 @@ $routes->post('/producto/sumar_stock', 'ProductoController::sumar_stock');
 
 $routes->post('/producto/vender_todo', 'ProductoController::vender_todo');
 
+
+
+$routes->get('/contact', 'HomeController::contact');
+
