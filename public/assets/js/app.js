@@ -1,5 +1,4 @@
 (function () {
-
     document.addEventListener('DOMContentLoaded', () => {
 
         const formulario = document.querySelector('#contacto-formulario');
