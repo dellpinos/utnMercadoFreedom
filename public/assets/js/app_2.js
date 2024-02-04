@@ -62,7 +62,7 @@
                             icono.appendChild(cuentaRegresiva);
                             let i = 10;
                             const intervalo = setInterval(() => {
-                                cuentaRegresiva.innerHTML = 'Seras redirigido en <span>' +  i + '</span> segs';
+                                cuentaRegresiva.innerHTML = 'Serás redirigido en <span>' + i + '</span> segs';
 
                                 i--;
 
