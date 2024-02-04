@@ -38,7 +38,7 @@
                 <img src="/img/<?php echo $producto['imagen'] ?>.jpg" alt="Imagen Producto">
 
             </div>
-            <p class="producto__descripcion"><?php echo $producto['descripcion']?><span class="text-bold"><?php echo " #Cod: " . $producto['id'] ?></span></p>
+            <p class="producto__descripcion"><?php echo $producto['descripcion'] ?><span class="text-bold"><?php echo " #Cod: " . $producto['id'] ?></span></p>
 
             <div class="producto__contenedor-enlace">
                 <?php $producto['stock'] <= 0 ? $agotado = true : $agotado = false; ?>
@@ -62,6 +62,7 @@
     </div>
 
     <footer class="home__footer">
+        <a href="<?php echo site_url('/contact') ?>" class="home__stock-btn bg-verde ">Contacto</a>
         <p>&copy; Martin del Pino - <span><?php echo Date('Y'); ?></span></p>
     </footer>
 

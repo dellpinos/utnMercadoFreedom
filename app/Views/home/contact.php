@@ -33,8 +33,6 @@
                 </form>
             </div>
 
-
-
         </div>
     </header>
 
@@ -60,7 +58,7 @@
 
                 <div class="formulario__campo-contenedor">
                     <label for="apellido" class="formulario__label">Apellido</label>
-                    <input type="text" placeholder="Tu Apeliido" class="formulario__campo" id="apellido">
+                    <input type="text" placeholder="Tu Apellido" class="formulario__campo" id="apellido">
                 </div>
 
                 <div class="formulario__campo-contenedor">
@@ -70,7 +68,7 @@
 
                 <div class="formulario__campo-contenedor">
                     <label for="email" class="formulario__label">Email</label>
-                    <input type="email" placeholder="corre@corre.com" class="formulario__campo" id="email">
+                    <input type="email" placeholder="correo@correo.com" class="formulario__campo" id="email">
                 </div>
 
                 <div class="formulario__campo-contenedor">
@@ -92,7 +90,7 @@
                     <textarea class="formulario__campo" id="descripcion"></textarea>
                 </div>
 
-                <input type="submit" class="formulario__enviar" value="Enviar" >
+                <input type="submit" class="formulario__enviar" value="Enviar">
 
 
             </form>
@@ -103,6 +101,7 @@
     </main>
 
     <footer class="home__footer">
+
         <p>&copy; Martin del Pino - <span><?php echo Date('Y'); ?></span></p>
 
         <script src="assets/js/app.js"></script>

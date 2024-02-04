@@ -37,7 +37,6 @@ class HomeController extends BaseController
                 'productos' => $resultado
             ]);
         }
-
     }
 
     public function contact() {
