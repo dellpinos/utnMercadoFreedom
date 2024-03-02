@@ -38,8 +38,10 @@
         <p class="home__mensaje"><?php echo $mensaje ?></p>
     <?php endif ?>
 
+
     <main class="home__principal bg-white">
-        <h2 class="auth__heading">Contacto</h2>
+
+        <h2 class="auth__heading">Login</h2>
 
         <div class="auth__contenedor">
 
@@ -49,24 +51,7 @@
                 <!-- Js -->
             </div>
 
-
-
             <form class="formulario" id="contacto-formulario">
-
-                <div class="formulario__campo-contenedor">
-                    <label for="name" class="formulario__label">Nombre</label>
-                    <input type="text" placeholder="Tu Nombre" class="formulario__campo" id="name">
-                </div>
-
-                <div class="formulario__campo-contenedor">
-                    <label for="apellido" class="formulario__label">Apellido</label>
-                    <input type="text" placeholder="Tu Apellido" class="formulario__campo" id="apellido">
-                </div>
-
-                <div class="formulario__campo-contenedor">
-                    <label for="telefono" class="formulario__label">Teléfono</label>
-                    <input type="tel" placeholder="Ej: 2222 3333" class="formulario__campo" id="telefono">
-                </div>
 
                 <div class="formulario__campo-contenedor">
                     <label for="email" class="formulario__label">Email</label>
@@ -74,23 +59,12 @@
                 </div>
 
                 <div class="formulario__campo-contenedor">
-                    <label for="tipo" class="formulario__label">Tipo de Contacto</label>
-                    <select id="tipo" class="formulario__campo">
-                        <option selected disabled>-- Seleccionar --</option>
-                        <option value="1">Soporte</option>
-                        <option value="2">Ventas</option>
-                    </select>
+                    <label for="email" class="formulario__label">Password</label>
+                    <input type="passwprd" placeholder="Tu Password" class="formulario__campo" id="email">
                 </div>
 
-                <div class="formulario__campo-contenedor">
-                    <label for="asunto" class="formulario__label">Asunto</label>
-                    <input type="text" placeholder="Asunto" class="formulario__campo" id="asunto">
-                </div>
 
-                <div class="formulario__campo-contenedor">
-                    <label for="descripcion" class="formulario__label">Descripción</label>
-                    <textarea class="formulario__campo" id="descripcion"></textarea>
-                </div>
+
 
                 <input type="submit" class="formulario__enviar" value="Enviar">
 
@@ -103,13 +77,16 @@
     </main>
 
     <footer class="home__footer">
+        <a href="<?php echo site_url('/contact') ?>" class="btn bg-verde ">Contacto</a>
 
         <p>&copy; Martin del Pino - <span><?php echo Date('Y'); ?></span></p>
 
         <script src="assets/js/app.js"></script>
+
     </footer>
 
 
 </body>
 
 </html>
+

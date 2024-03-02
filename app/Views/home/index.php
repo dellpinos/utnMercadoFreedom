@@ -24,14 +24,38 @@
 
                 <h1>Mercado Freedom</h1>
             </a>
-            <div class="home__contenedor-stock-btn">
-                <form action="<?php echo site_url('/producto/sumar_stock') ?>" method="POST">
-                    <button class="home__stock-btn" type="submit">Reponer Stock</button>
-                </form>
-                <form action="<?php echo site_url('/producto/vender_todo') ?>" method="POST">
-                    <button class="home__stock-btn bg-red" type="submit">Vender Todo</button>
-                </form>
-            </div>
+
+            <?php if ($user_data !== false) : ?>
+
+                <div class="home__nav">
+                    <p class="home__nombre"><span>Hola:</span> Martín del Pino</p>
+
+                    <div class="home__contenedor-nav-btn">
+
+                        <form action="<?php echo site_url('/producto/sumar_stock') ?>" method="POST">
+                            <button class="btn" type="submit">Reponer Stock</button>
+                        </form>
+                        <form action="<?php echo site_url('/producto/vender_todo') ?>" method="POST">
+                            <button class="btn bg-red" type="submit">Vender Todo</button>
+                        </form>
+                    </div>
+                </div>
+
+
+            <?php else : ?>
+
+
+                <div class="home__contenedor-nav-btn">
+                    <a href="<?php echo site_url('/register') ?>" class="btn">Register</a>
+
+                    <a href="<?php echo site_url('/login') ?>" class="btn">Login</a>
+                </div>
+
+
+
+
+            <?php endif ?>
+
 
         </div>
     </header>
@@ -73,8 +97,8 @@
     </main>
 
     <footer class="home__footer">
-        <a href="<?php echo site_url('/contact') ?>" class="home__stock-btn bg-verde ">Contacto</a>
-        
+        <a href="<?php echo site_url('/contact') ?>" class="btn bg-verde ">Contacto</a>
+
         <p>&copy; Martin del Pino - <span><?php echo Date('Y'); ?></span></p>
 
     </footer>

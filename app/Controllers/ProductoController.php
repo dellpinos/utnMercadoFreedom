@@ -9,6 +9,9 @@ class ProductoController extends BaseController
 {
     public function find($id)
     {
+
+
+
         $productos = new ProductoModel();
         $resultado = $productos->find($id);
 

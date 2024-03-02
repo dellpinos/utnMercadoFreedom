@@ -27,14 +27,14 @@
             const icono = document.querySelector('#contenedor-aux');
             if (errores.length !== 0) {
                 icono.innerHTML = `
-            <p class="contacto__mensaje c-red">Todos los campos son obligatorios</p>
-            <img class="contacto__icono" src="img/cancel.svg" alt="Icono Cancel">
+            <p class="auth__mensaje c-red">Todos los campos son obligatorios</p>
+            <img class="auth__icono" src="img/cancel.svg" alt="Icono Cancel">
             `;
             } else {
                 icono.innerHTML = `
-            <p class="contacto__mensaje">Te contactaré lo antes posible</p>
-            <img class="contacto__icono" src="img/clock.svg" alt="Icono Reloj">
-            <p id="mensaje-servidor" class="contacto__mensaje"></p>
+            <p class="auth__mensaje">Te contactaré lo antes posible</p>
+            <img class="auth__icono" src="img/clock.svg" alt="Icono Reloj">
+            <p id="mensaje-servidor" class="auth__mensaje"></p>
             `;
 
                 // contactar Servidor

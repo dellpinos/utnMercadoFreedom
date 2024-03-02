@@ -38,18 +38,18 @@
         <p class="home__mensaje"><?php echo $mensaje ?></p>
     <?php endif ?>
 
+
     <main class="home__principal bg-white">
-        <h2 class="auth__heading">Contacto</h2>
+
+        <h2 class="auth__heading">Register</h2>
 
         <div class="auth__contenedor">
 
             <div class="auth__contenedor-aux" id="contenedor-aux">
-                <p class="auth__mensaje">Todos los campos son obligatorios</p>
+                <p class="auth__mensaje">Nuevo Usuario</p>
                 <img class="auth__icono" src="img/info.svg" alt="Icono Info">
                 <!-- Js -->
             </div>
-
-
 
             <form class="formulario" id="contacto-formulario">
 
@@ -74,25 +74,17 @@
                 </div>
 
                 <div class="formulario__campo-contenedor">
-                    <label for="tipo" class="formulario__label">Tipo de Contacto</label>
-                    <select id="tipo" class="formulario__campo">
-                        <option selected disabled>-- Seleccionar --</option>
-                        <option value="1">Soporte</option>
-                        <option value="2">Ventas</option>
-                    </select>
+                    <label for="password" class="formulario__label">Password</label>
+                    <input type="password" placeholder="Tu Password" class="formulario__campo" id="email">
                 </div>
 
                 <div class="formulario__campo-contenedor">
-                    <label for="asunto" class="formulario__label">Asunto</label>
-                    <input type="text" placeholder="Asunto" class="formulario__campo" id="asunto">
+                    <label for="password_confim" class="formulario__label">Repetir Password</label>
+                    <input type="password_confim" placeholder="Repite tu Password" class="formulario__campo" id="email">
                 </div>
 
-                <div class="formulario__campo-contenedor">
-                    <label for="descripcion" class="formulario__label">Descripción</label>
-                    <textarea class="formulario__campo" id="descripcion"></textarea>
-                </div>
 
-                <input type="submit" class="formulario__enviar" value="Enviar">
+                <input type="submit" class="formulario__enviar" value="Crear Cuenta">
 
 
             </form>
@@ -103,10 +95,10 @@
     </main>
 
     <footer class="home__footer">
+        <a href="<?php echo site_url('/contact') ?>" class="btn bg-verde ">Contacto</a>
 
         <p>&copy; Martin del Pino - <span><?php echo Date('Y'); ?></span></p>
 
-        <script src="assets/js/app.js"></script>
     </footer>
 
 
