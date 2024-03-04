@@ -41,46 +41,46 @@
 
     <main class="home__principal bg-white">
 
-        <h2 class="auth__heading">Register</h2>
+        <h2 class="auth__heading">Nuevo Usuario</h2>
 
         <div class="auth__contenedor">
 
-            <div class="auth__contenedor-aux" id="contenedor-aux">
-                <p class="auth__mensaje">Nuevo Usuario</p>
-                <img class="auth__icono" src="img/info.svg" alt="Icono Info">
+            <div class="auth__contenedor-aux">
+                <!-- <p class="auth__mensaje">Nuevo Usuario</p> -->
+                <img class="auth__icono register__icono" src="img/register.svg" alt="Icono Info">
                 <!-- Js -->
             </div>
 
-            <form class="formulario" id="contacto-formulario">
+            <form class="formulario" id="register-formulario">
 
                 <div class="formulario__campo-contenedor">
-                    <label for="name" class="formulario__label">Nombre</label>
-                    <input type="text" placeholder="Tu Nombre" class="formulario__campo" id="name">
+                    <label for="register-name" class="formulario__label">Nombre</label>
+                    <input type="text" placeholder="Tu Nombre" class="formulario__campo" id="register-name" name="name">
                 </div>
 
                 <div class="formulario__campo-contenedor">
-                    <label for="apellido" class="formulario__label">Apellido</label>
-                    <input type="text" placeholder="Tu Apellido" class="formulario__campo" id="apellido">
+                    <label for="register-apellido" class="formulario__label">Apellido</label>
+                    <input type="text" placeholder="Tu Apellido" class="formulario__campo" id="register-apellido" name="apellido">
                 </div>
 
                 <div class="formulario__campo-contenedor">
-                    <label for="telefono" class="formulario__label">Teléfono</label>
-                    <input type="tel" placeholder="Ej: 2222 3333" class="formulario__campo" id="telefono">
+                    <label for="register-telefono" class="formulario__label">Teléfono</label>
+                    <input type="tel" placeholder="Ej: 2222 3333" class="formulario__campo" id="register-telefono" name="telefono">
                 </div>
 
                 <div class="formulario__campo-contenedor">
-                    <label for="email" class="formulario__label">Email</label>
-                    <input type="email" placeholder="correo@correo.com" class="formulario__campo" id="email">
+                    <label for="register-email" class="formulario__label">Email</label>
+                    <input type="email" placeholder="correo@correo.com" class="formulario__campo" id="register-email" name="email">
                 </div>
 
                 <div class="formulario__campo-contenedor">
-                    <label for="password" class="formulario__label">Password</label>
-                    <input type="password" placeholder="Tu Password" class="formulario__campo" id="email">
+                    <label for="register-password" class="formulario__label">Password</label>
+                    <input type="password" placeholder="Tu Password" class="formulario__campo" id="register-password" name="password">
                 </div>
 
                 <div class="formulario__campo-contenedor">
-                    <label for="password_confim" class="formulario__label">Repetir Password</label>
-                    <input type="password_confim" placeholder="Repite tu Password" class="formulario__campo" id="email">
+                    <label for="register-password_confim" class="formulario__label">Repetir Password</label>
+                    <input type="password" placeholder="Repite tu Password" class="formulario__campo" id="register-confirm_password" name="confirm_password">
                 </div>
 
 
@@ -98,6 +98,8 @@
         <a href="<?php echo site_url('/contact') ?>" class="btn bg-verde ">Contacto</a>
 
         <p>&copy; Martin del Pino - <span><?php echo Date('Y'); ?></span></p>
+
+        <script src="assets/js/register.js"></script>
 
     </footer>
 

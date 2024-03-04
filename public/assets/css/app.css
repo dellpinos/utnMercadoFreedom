@@ -241,7 +241,7 @@ h2.auth__heading {
 .auth__contenedor {
     margin: 0 100px;
     display: grid;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 40px;
     align-items: center;
 }
@@ -260,10 +260,19 @@ h2.auth__heading {
 
 .auth__icono {
     width: 60%;
+    min-height: 400px;
 
 }
 
 /* Contacto */
+
+.contacto__contenedor {
+    margin: 0 100px;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
 
 .contacto__cuenta-regresiva {
     font-size: 18px;
@@ -276,10 +285,17 @@ h2.auth__heading {
     }
 }
 
+/* Register */
+
+.register__icono {
+    width: 90%;
+    min-height: 400px;
+}
+
 /* Formulario Contacto */
 
 .formulario {
-    margin: 30px 0 50px 0;
+    margin: 50px auto;
     padding: 30px;
     border: 2px solid var(--blanco);
     border-radius: 5px;
@@ -289,6 +305,7 @@ h2.auth__heading {
     gap: 20px;
     background-color: var(--silver);
     height: fit-content;
+    width: fit-content;
 }
 
 .formulario__campo-contenedor {

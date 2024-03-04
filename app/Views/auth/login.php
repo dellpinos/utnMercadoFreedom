@@ -46,25 +46,21 @@
         <div class="auth__contenedor">
 
             <div class="auth__contenedor-aux" id="contenedor-aux">
-                <p class="auth__mensaje">Todos los campos son obligatorios</p>
-                <img class="auth__icono" src="img/info.svg" alt="Icono Info">
+                <img class="auth__icono" src="img/login.svg" alt="Icono Info">
                 <!-- Js -->
             </div>
 
-            <form class="formulario" id="contacto-formulario">
+            <form class="formulario" id="login-formulario" novalidate>
 
                 <div class="formulario__campo-contenedor">
-                    <label for="email" class="formulario__label">Email</label>
-                    <input type="email" placeholder="correo@correo.com" class="formulario__campo" id="email">
+                    <label for="login-email" class="formulario__label">Email</label>
+                    <input type="email" placeholder="correo@correo.com" class="formulario__campo" id="login-email">
                 </div>
 
                 <div class="formulario__campo-contenedor">
-                    <label for="email" class="formulario__label">Password</label>
-                    <input type="passwprd" placeholder="Tu Password" class="formulario__campo" id="email">
+                    <label for="login-password" class="formulario__label">Password</label>
+                    <input type="password" placeholder="Tu Password" class="formulario__campo" id="login-password">
                 </div>
-
-
-
 
                 <input type="submit" class="formulario__enviar" value="Enviar">
 
@@ -81,7 +77,7 @@
 
         <p>&copy; Martin del Pino - <span><?php echo Date('Y'); ?></span></p>
 
-        <script src="assets/js/app.js"></script>
+        <script src="assets/js/login.js"></script>
 
     </footer>
 

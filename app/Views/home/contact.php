@@ -41,7 +41,7 @@
     <main class="home__principal bg-white">
         <h2 class="auth__heading">Contacto</h2>
 
-        <div class="auth__contenedor">
+        <div class="contacto__contenedor">
 
             <div class="auth__contenedor-aux" id="contenedor-aux">
                 <p class="auth__mensaje">Todos los campos son obligatorios</p>
@@ -106,7 +106,7 @@
 
         <p>&copy; Martin del Pino - <span><?php echo Date('Y'); ?></span></p>
 
-        <script src="assets/js/app.js"></script>
+        <script src="assets/js/contacto.js"></script>
     </footer>
 
 
