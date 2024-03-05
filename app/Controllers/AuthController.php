@@ -11,20 +11,46 @@ class AuthController extends BaseController
     public function login()
     {
 
-        // POST
-        // dd("logueando...");
-
-
-        // GET
         return view('auth/login');
-
     }
 
     public function login_auth()
     {
 
-        // POST
-        dd("logueando...");
+        // POST (API)
+        $request = $this->request;
+
+        $user = new UserModel();
+
+        // Verifica si existe el usuario
+        $usuario = $user->where('email', $this->request->getPost('email'))->first();
+
+
+        if (!$usuario > 0) {
+            return $this->response->setJSON(['mensaje' => "Usuario inexistente"]);
+        }
+
+    
+        if(password_verify($request->getPost('password'), $usuario['password'])) {
+            
+            // Loguear y redirigir
+            $session = Services::session();
+
+            $data = [
+                'email' => $usuario['email'],
+                'nombre' => $usuario['nombre']
+            ];
+
+            $session->set($data);
+
+
+            return $this->response->setJSON(['mensaje' => true]);
+            
+        } else {
+
+            return $this->response->setJSON(['mensaje' => "Password incorrecto"]);
+        }
+
 
 
     }
@@ -45,7 +71,7 @@ class AuthController extends BaseController
         $email_existente = $user->where('email', $this->request->getPost('email'))->countAllResults();
 
         if ($email_existente > 0) {
-            return $this->response->setJSON(['almacenamiento' => false]);
+            return $this->response->setJSON(['mensaje' => "Email ya registrado"]);
         }
 
         // Hashear password
@@ -63,13 +89,27 @@ class AuthController extends BaseController
         $resultado = $user->insert($data);
 
         if ($resultado) {
-            return $this->response->setJSON(['almacenamiento' => true]);
+            
+            $session = Services::session();
+            
+            $dataSesion = [
+                'email' => $request->getPost('email'),
+                'nombre' => $request->getPost('name')
+            ];
+            
+            $session->set($dataSesion);
+            
+            return $this->response->setJSON(['mensaje' => true]);
+
         } else {
-            return $this->response->setJSON(['almacenamiento' => false]);
+            return $this->response->setJSON(['mensaje' => "Algo salió mal"]);
         }
     }
+
     public function logout()
     {
-        dd("logout...");
+        $session = Services::session();
+        $session->destroy();
+        return redirect()->to('/');
     }
 }
