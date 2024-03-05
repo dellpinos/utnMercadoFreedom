@@ -20,6 +20,7 @@
 html {
     scroll-behavior: smooth;
 }
+
 body {
     width: 100%;
     font-family: var(--fuente);
@@ -48,31 +49,37 @@ a {
 .home__contenedor-header {
     display: flex;
     justify-content: space-between;
-    padding: 20px 40px;
+    padding: 40px 80px;
 }
 
 .home__logo-icon {
-    height: 80px;
-    color: var(--negro);
+    height: 300px;
 }
 
 .home__logo {
 
     display: flex;
-    gap: 20px;
+    gap: 60px;
     align-items: center;
 
     h1 {
         letter-spacing: 3px;
         font-weight: 700;
-        font-size: 40px;
+        font-size: 60px;
         color: var(--negro);
     }
+
+    span {
+        display: block;
+    }
+
 }
 
 .home__nav {
     display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 3rem;
 }
 
@@ -102,10 +109,10 @@ a {
     color: var(--negro);
 
 }
+
 .home__right:hover {
     color: var(--azul);
 }
-
 
 /* Contenido */
 
@@ -121,23 +128,66 @@ a {
 .home__grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    padding: 30px 30px 70px 30px;
     gap: 20px;
 }
 
 .home__principal {
 
-    padding: 30px 30px 70px 30px;
+    padding: 70px 0;
     background-color: var(--silver);
 
     h2 {
         text-align: center;
-        font-size: 35px;
-        margin: 30px 0 40px 0;
+        font-size: 45px;
+        margin: 0 0 40px 0;
         color: var(--blanco);
     }
 }
 
+.home__divisor {
+    width: 100%;
+    padding: 50px 0;
+    background-color: var(--amarillo);
+    margin: 30px 0 50px 0;
+
+    h2 {
+        color: var(--negro);
+        font-size: 35px;
+    }
+}
+
+.home__divisor-grid {
+
+    display: flex;
+    justify-content: space-around;
+
+    img {
+        width: 150px;
+        height: auto;
+
+        padding: 20px;
+
+    }
+}
+
 .producto__contenedor {
+
+    width: 280px;
+    margin: 0 auto;
+    border: 4px solid var(--dorado);
+    background-color: var(--blanco);
+    padding: 10px;
+    border-radius: 8px;
+    max-width: 700px;
+    box-shadow: 0px 0px 10px 5px var(--blanco);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.producto__contenedor-full {
 
     margin: 0 auto;
     border: 4px solid var(--dorado);
@@ -146,7 +196,14 @@ a {
     border-radius: 8px;
     max-width: 700px;
     box-shadow: 0px 0px 10px 5px var(--blanco);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
+    img {
+        max-width: 700px;
+        max-height: 350px;
+    }
 }
 
 .producto__btn {
@@ -161,6 +218,7 @@ a {
     border: none;
 
 }
+
 .producto__btn:hover {
     background-color: var(--azulOscuro);
     cursor: pointer;
@@ -198,7 +256,8 @@ a {
     justify-content: center;
 
     img {
-        height: 250px;
+        max-height: 250px;
+        max-width: 250px;
     }
 }
 
@@ -245,6 +304,7 @@ h2.auth__heading {
     gap: 40px;
     align-items: center;
 }
+
 .auth__contenedor-aux {
     display: flex;
     flex-direction: column;
@@ -252,6 +312,7 @@ h2.auth__heading {
 
     gap: 70px;
 }
+
 .auth__mensaje {
     text-align: center;
     font-size: 30px;
@@ -347,6 +408,18 @@ select.formulario__campo {
     background-color: var(--azulOscuro);
 }
 
+.formulario__error {
+
+    width: 100%;
+    color: var(--blanco);
+    background-color: var(--rojo);
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: center;
+    padding: 10px;
+    font-size: 12px;
+}
+
 
 /* Footer */
 
@@ -394,42 +467,54 @@ select.formulario__campo {
     border: 1px solid var(--blanco);
 
 }
+
 .input-disabled:hover {
     cursor: not-allowed;
 }
+
 .btn-disabled {
     background-color: var(--silver);
     border: 2px solid var(--blanco);
 
 }
+
 .btn-disabled:hover {
     cursor: not-allowed;
     background-color: var(--silver);
 }
+
 .text-xl {
     font-size: 25px;
 }
+
 .text-bold {
     font-weight: 700;
 }
+
 .bg-red {
     background-color: var(--rojo);
 }
+
 .bg-red:hover {
     background-color: var(--rojoOscuro);
 }
+
 .bg-verde {
     background-color: var(--verde);
 }
+
 .bg-verde:hover {
     background-color: var(--verdeOscuro);
 }
+
 .bg-white {
     background-color: var(--blanco);
 }
+
 .b-red {
     border: 1px solid var(--rojo);
 }
+
 .c-red {
     color: var(--rojo);
 }

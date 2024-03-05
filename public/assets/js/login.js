@@ -47,62 +47,51 @@
                 (async () => {
                     const respuesta = await loginUsuario();
 
-                    
-                    if(respuesta.almacenamiento) {
+                    if (respuesta.mensaje === true) {
                         // redirigir al usuario
-                        console.log(respuesta.almacenamiento);
+                        console.log(respuesta.respuesta);
+                        setTimeout(() => {
+                            window.location.href = "/";
+                        }, 1000);
 
                     } else {
-                        console.log("Algo salió mal")
+                        // Informar Error
+                        if (document.querySelector('.formulario__error')) {
+                            const erroresPrevios = document.querySelectorAll('.formulario__error');
+                            erroresPrevios.forEach(error => error.remove());
+                        }
+
+                        const error = document.createElement('P');
+                        error.classList.add('formulario__error');
+                        error.textContent = respuesta.mensaje;
+
+                        formulario.insertBefore(error, formulario.firstChild);
+
                     }
 
                 })();
-
-                
-
-
             }
-
-
-
-
-            /// >>>>
 
             async function loginUsuario() {
 
                 const url = '/login/auth';
                 const datos = new FormData();
-                datos.append('name', nombre.value);
-                datos.append('apellido', apellido.value);
-                datos.append('telefono', telefono.value);
                 datos.append('email', email.value);
                 datos.append('password', passwords[0].value);
 
                 try {
-
                     const respuesta = await fetch(url, {
                         method: 'POST',
                         body: datos
                     });
-    
-                    const resultado = await respuesta.json();
 
+                    const resultado = await respuesta.json();
                     return resultado;
 
-                    
                 } catch (error) {
                     console.log(error);
                 }
-
-
-
-
             }
-
         });
-
-
-
-
     });
 })();
