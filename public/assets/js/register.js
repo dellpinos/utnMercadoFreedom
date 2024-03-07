@@ -12,7 +12,7 @@
 
         let errores = [];
 
-        const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        const emailRegex = /^[a-zA-Z0-9._+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         const nombreRegex = /^[a-zA-ZáéíóúÁÉÍÓÚ\s]{3,15}$/;
         const telefonoRegex = /^[0-9\s-]{4,15}$/;
 
