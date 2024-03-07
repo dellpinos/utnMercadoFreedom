@@ -24,9 +24,9 @@
             </a>
 
             <div class="home__contenedor-nav-btn">
-                <a href="<?php echo site_url('/register') ?>" class="btn">Register</a>
+                <a href="<?php echo site_url('/register') ?>" class="btn">Sign Up</a>
 
-                <a href="<?php echo site_url('/login') ?>" class="btn">Login</a>
+                <a href="<?php echo site_url('/login') ?>" class="btn">Log in</a>
             </div>
 
 

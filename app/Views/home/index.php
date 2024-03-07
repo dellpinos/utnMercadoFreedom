@@ -36,7 +36,7 @@
                             <button class="btn bg-red" type="submit">Vender Todo</button>
                         </form>
                         <form action="<?php echo site_url('/logout') ?>" method="POST">
-                            <button class="btn bg-red" type="submit">Cerrar Sesión</button>
+                            <button class="btn bg-red" type="submit">Log out</button>
                         </form>
                     </div>
                 </div>
@@ -44,21 +44,18 @@
             <?php else : ?>
 
                 <div class="home__contenedor-nav-btn">
-                    <a href="<?php echo site_url('/register') ?>" class="btn">Register</a>
+                    <a href="<?php echo site_url('/register') ?>" class="btn">Sign Up</a>
 
-                    <a href="<?php echo site_url('/login') ?>" class="btn">Login</a>
+                    <a href="<?php echo site_url('/login') ?>" class="btn">Log in</a>
                 </div>
 
             <?php endif ?>
         </div>
     </header>
 
-
-
     <?php if (isset($mensaje)) : ?>
         <p class="home__mensaje"><?php echo $mensaje ?></p>
     <?php endif ?>
-
 
     <main class="home__principal">
 
